@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-management-system-springboot-main
+  namespace: tanmay01
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: student-management-system-springboot-main
+  template:
+    metadata:
+      labels:
+        app: student-management-system-springboot-main
+    spec:
+      containers:
+        - name: student-management-system-springboot-main
+          image: tanny06/app
+          ports:
+            - containerPort: 8080
